@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+
+    <title>Breezed HTML Bootstrap Template</title>
+
+    <!--
+
+Breezed Template
+
+https://templatemo.com/tm-543-breezed
+
+-->
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets\css\alert.css' %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/font-awesome.css' %}">
+
+    <link rel="stylesheet" href="{% static 'assets/css/templatemo-breezed.css' %}">
+
+    <link rel="stylesheet" href="{% static 'assets/css/owl-carousel.css' %}">
+
+    <link rel="stylesheet" href="{% static 'assets/css/lightbox.css' %}">
+
+</head>
+
+<body onload="checkRedAlert()">
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+    <style>
+        .header-area {
+            background-color: #333;
+            padding: 15px 0;
+            /* Add background image or color here */
+            background: url('path/to/your/background-image.jpg') center center/cover;
+            /* Adjust the path accordingly */
+            /* If you want a solid color background, you can use: background-color: #333; */
+        }
+
+        .main-nav a {
+            color: #fff;
+        }
+
+        .main-nav a:hover {
+            color: #ffd700;
+        }
+    </style>
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href=" " class="logo">
+                            Athirappilly-Online
+                        </a>
+
+
+
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li class="scroll-to-section"><a href=" ">Home</a></li>
+                            <li class="scroll-to-section"><a href="about">About</a></li>
+                            <li class="scroll-to-section"><a href="admin_login">Admin Login</a></li>
+                            <li class="submenu">
+                                <a href="javascript:;">Explore</a>
+                                <ul>
+                                    <li><a href="">Athirappilly wonders</a></li>
+                                    <li><a href="">Gallery</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="scroll-to-section"><a href="register">Register</a></li>
+
+
+                            <li class="scroll-to-section"><a href="contact">Contact Us</a></li>
+
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+
+
+    <!-- ***** Main Banner Area Start ***** -->
+    <div class="main-banner header-text" id="top">
+        <div class="Modern-Slider">
+            <!-- Item -->
+            <div class="item">
+                <div class="img-fill">
+                    <img src="{% static 'assets\images\athirappilly-new-pic-1.jpg' %}" alt="">
+                    <div class="text-content">
+                        <h5><strong>Welcome To Athirappilly-Vazhachal Online</strong></h5>
+                        <h3>Enchanting Athirappilly-Vazhachal Online: Unveiling the Beauty, Unleashing the Adventure,
+                            Your Journey Awaits</h3>
+                        <a href="check_availability" class="main-filled-button">Check Availability</a>
+                    </div>
+                </div>
+            </div>
+            <!-- // Item -->
+            <!-- Item -->
+            <div class="item">
+                <div class="img-fill">
+                    <img src="{% static 'assets\images\Athirappilly-Falls.webp' %}" alt="">
+                    <div class="text-content">
+                        <h5><strong>Welcome To Athirappilly-Vazhachal Online</strong></h5>
+                        <h3>Enchanting Athirappilly-Vazhachal Online: Unveiling the Beauty, Unleashing the Adventure,
+                            Your Journey Awaits</h3>
+                        <a href="check_availability" class="main-filled-button">Check Availability</a>
+                    </div>
+                </div>
+            </div>
+            <!-- // Item -->
+            <!-- Item -->
+            <div class="item">
+                <div class="img-fill">
+                    <img src="{% static 'assets\images\athirappilly-new1.jpg' %}" alt="">
+                    <div class="text-content">
+                        <h5><strong>Welcome To Athirappilly-Vazhachal Online</strong></h5>
+                        <h3>Enchanting Athirappilly-Vazhachal Online: Unveiling the Beauty, Unleashing the Adventure,
+                            Your Journey Awaits</h3>
+                        <a href="check_availability" class="main-filled-button">Check Availability</a>
+                    </div>
+                </div>
+            </div>
+            <!-- // Item -->
+        </div>
+        
+        <!-- Emergency Alert Message Container -->
+        <div id="overlay">
+            
+            <div class="message-box">
+                <span class="close-btn" onclick="closeOverlay()">×</span>
+                <h2>Emergency Alert!</h2>
+                <p>Ticket booking for Athirappilly-Vazhachal Waterfalls on 25/1/2024 is closed due to a red alert for heavy rain in Thrissur district, as announced by the collector. Your safety is our priority. Stay tuned for updates and plan your visit accordingly.</p>
+            </div>
+        </div>
+        <!-- End of Emergency Alert Message Container -->
+        
+    </div>
+    <div class="scroll-down scroll-to-section"><a href="#about"><i class="fa fa-arrow-down"></i></a></div>
+    <!-- ***** Main Banner Area End ***** -->
+
+    <!-- ***** About Area Starts ***** -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <div class="left-text-content">
+                        <div class="section-heading">
+                            <h6>About Us</h6>
+                            <h2>The Niagara of South India</h2>
+                        </div>
+    
+                    </div>
+    
+                    <div class="col-md-12">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDpSV88lUyy3ezEY8DpSEFNcjoHaOA2MO0Sw&usqp=CAU" alt="Description of the image">
+    
+                        <a href="#" class="main-button-icon">
+                            Learn More <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <div class="right-text-content">
+                        <p> Athirappilly Falls is a waterfall in Kerala, India. It's the largest
+                            waterfall in the state, standing at 81.5 feet tall. The falls are located on the Chalakudy
+                            River, which originates in the Western Ghats.
+                            <br><br>The falls are also known as the "Niagara of South India" and "Bahubali Waterfall".
+                            They're made up of four drops and fall in parallel streams.
+                            The Chalakudy River runs slowly until it reaches Athirappilly, where it picks up speed and falls
+                            over the 80-foot rock. The river remains turbulent for about a kilometer.
+                            Visitors can swim in the clear waters of the falls. The falls are open Thursday through Sunday
+                            from 8 AM–6 PM, with last admission at 5:30 PM.
+                            <br><br>To reach the main waterfall, visitors must walk about two kilometers from the entry
+                            gate. Some say you can spot wildlife like mountain squirrels, hornbills, sambhar deer, leopards,
+                            and elephants in the canopy.
+                        </p>
+                    </div>
+                </div>
+            </div>
+    
+    
+        </div>
+    </section>
+    <!-- ***** About Area Ends ***** -->
+
+  
+
+
+    
+    <!-- ***** Contact Us Area Starts ***** -->
+    <section class="section" id="contact-us">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-xs-12">
+                    <div class="left-text-content">
+                        <div class="section-heading">
+                            <h6>Contact Us</h6>
+                            <h2>Feel free to keep in touch with us!</h2>
+                        </div>
+                        <ul class="contact-info">
+                            <li><img src="{% static 'assets/images/contact-info-01.png' %}" alt="">010-020-0860</li>
+                            <li><img src="{% static 'assets/images/contact-info-02.png' %}" alt="">athirappillyonline@gmail.com</li>
+                            <li><img src="{% static 'assets/images/contact-info-03.png' %}" alt="">www.athirappilly-vazhachalonline.com</li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-8 col-xs-12">
+                    <div class="contact-form">
+                        <form id="contact" action="" method="get">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <fieldset>
+                                        <input name="name" type="text" id="name" placeholder="Your Name *" required="">
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <fieldset>
+                                        <input name="phone" type="text" id="phone" placeholder="Your Phone" required="">
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <fieldset>
+                                        <input name="email" type="email" id="email" placeholder="Your Email *"
+                                            required="">
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <fieldset>
+                                        <input name="subject" type="text" id="subject" placeholder="Subject">
+                                    </fieldset>
+                                </div>
+                                <div class="col-lg-12">
+                                    <fieldset>
+                                        <textarea name="message" rows="6" id="message" placeholder="Message"
+                                            required=""></textarea>
+                                    </fieldset>
+                                </div>
+                                <div class="col-lg-12">
+                                    <fieldset>
+                                        <button type="submit" id="form-submit" class="main-button-icon">Send Message Now
+                                            <i class="fa fa-arrow-right"></i></button>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Contact Us Area Ends ***** -->
+
+    ***** Footer Start *****
+    <!-- <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-xs-12">
+                    <div class="left-text-content">
+                        <p>Copyright &copy; 2020 Breezed Co., Ltd.
+
+                            - Design: <a rel="nofollow noopener" href="https://templatemo.com">TemplateMo</a></p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xs-12">
+                    <div class="right-text-content">
+                        <ul class="social-icons">
+                            <li>
+                                <p>Follow Us</p>
+                            </li>
+                            <li><a rel="nofollow" href="https://fb.com/templatemo"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li><a rel="nofollow" href="https://fb.com/templatemo"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li><a rel="nofollow" href="https://fb.com/templatemo"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                            <li><a rel="nofollow" href="https://fb.com/templatemo"><i class="fa fa-dribbble"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer> -->
+
+
+    <!-- jQuery -->
+<script src="{% static 'assets/js/jquery-2.1.0.min.js' %}"></script>
+
+<!-- Bootstrap -->
+<script src="{% static 'assets/js/popper.js' %}"></script>
+<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+
+<!-- Plugins -->
+<script src="{% static 'assets/js/owl-carousel.js' %}"></script>
+<script src="{% static 'assets/js/scrollreveal.min.js' %}"></script>
+<script src="{% static 'assets/js/waypoints.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.counterup.min.js' %}"></script>
+<script src="{% static 'assets/js/imgfix.min.js' %}"></script>
+<script src="{% static 'assets/js/slick.js' %}"></script>
+<script src="{% static 'assets/js/lightbox.js' %}"></script>
+<script src="{% static 'assets/js/isotope.js' %}"></script>
+
+<!-- Global Init -->
+<script src="{% static 'assets/js/custom.js' %}"></script>
+
+<script>
+    // Function to open the overlay
+    function openOverlay() {
+        document.getElementById('overlay').style.display = 'flex';
+    }
+
+    // Function to close the overlay
+    function closeOverlay() {
+        document.getElementById('overlay').style.display = 'none';
+    }
+
+    $(function () {
+        var selectedClass = "";
+        $("p").click(function () {
+            selectedClass = $(this).attr("data-rel");
+            $("#portfolio").fadeTo(50, 0.1);
+            $("#portfolio div").not("." + selectedClass).fadeOut();
+            setTimeout(function () {
+                $("." + selectedClass).fadeIn();
+                $("#portfolio").fadeTo(50, 1);
+            }, 500);
+        });
+    });
+
+
+   
+        // Function to check if the query parameter 'redAlert' is present and show the alert
+        function checkRedAlert() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const redAlertParam = urlParams.get('redAlert');
+
+            if (redAlertParam === 'true') {
+                // Show the red alert
+                document.getElementById('redAlert').style.display = 'block';
+            }
+        }
+    
+
+    // Open the overlay when the page loads (you can trigger it based on your requirements)
+    $(document).ready(function () {
+        openOverlay();
+    });
+</script>
+
+</body>
+</html>
