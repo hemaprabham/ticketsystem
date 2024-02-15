@@ -1,0 +1,51 @@
+{% include 'base.html' %}
+
+{% load static %}
+
+<!-- Include your stylesheets -->
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/alert.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/font-awesome.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/templatemo-breezed.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/owl-carousel.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/lightbox.css' %}">
+
+{% block content %}
+<section class="section" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-xs-12">
+                <div class="left-text-content">
+                    <div class="section-heading">
+                        <h6>About Us</h6>
+                        <h2>The Niagara of South India</h2>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDpSV88lUyy3ezEY8DpSEFNcjoHaOA2MO0Sw&usqp=CAU" alt="Description of the image">
+                    <a href="#" class="main-button-icon">
+                        Learn More <i class="fa fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12">
+                <div class="right-text-content">
+                    <p> Athirappilly Falls is a waterfall in Kerala, India. It's the largest
+                        waterfall in the state, standing at 81.5 feet tall. The falls are located on the Chalakudy
+                        River, which originates in the Western Ghats.
+                        <br><br>The falls are also known as the "Niagara of South India" and "Bahubali Waterfall".
+                        They're made up of four drops and fall in parallel streams.
+                        The Chalakudy River runs slowly until it reaches Athirappilly, where it picks up speed and falls
+                        over the 80-foot rock. The river remains turbulent for about a kilometer.
+                        Visitors can swim in the clear waters of the falls. The falls are open Thursday through Sunday
+                        from 8 AM–6 PM, with last admission at 5:30 PM.
+                        <br><br>To reach the main waterfall, visitors must walk about two kilometers from the entry
+                        gate. Some say you can spot wildlife like mountain squirrels, hornbills, sambhar deer, leopards,
+                        and elephants in the canopy.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

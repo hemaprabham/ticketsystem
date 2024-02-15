@@ -1,0 +1,119 @@
+{% include 'base.html' %}
+
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Booking Form HTML Template</title>
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link type="text/css" rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}" />
+    <!-- Bootstrap-datepicker CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+    <!-- Custom stylesheet -->
+    <link type="text/css" rel="stylesheet" href="{% static 'assets/css/stylec.css' %}" />
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<style>
+    body {
+        background-image: url("{% static 'assets\images\athirappilly3.jpg' %}");
+        background-size: cover;
+        background-position: center center;
+        background-attachment: fixed;
+        opacity: 0.8; /* Adjust the opacity value as needed */
+    }
+
+    /* Additional styling for other elements if required */
+    #booking {
+        background-color: rgba(255, 255, 255, 0.8); /* Example: white background with 0.8 opacity */
+        padding: 20px;
+    }
+</style>
+
+
+<body>
+    <div id="booking" class="section">
+        <div class="section-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7 col-md-push-5">
+                        <div class="booking-cta">
+                            <h1>Book Now!</h1>
+                            <p>Explore and Reserve: Check availability for your Athirappilly-Vazhachal Waterfalls visit
+                                and secure your ticket today!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-md-pull-7">
+                        <div class="booking-form">
+                            <form action="{% url 'check_availability' %}" method="post">
+
+                                {% csrf_token %}
+
+                                <div class="form-group">
+                                    <label for="dateInput" class="form-label">Select Date</label>
+                                    <input id="dateInput" name="dateInput" class="form-control" type="text" placeholder="Select a date"
+                                        data-provide="datepicker" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="timeSlot" class="form-label">Select Time Slot</label>
+                                    <select id="timeSlot" name="timeSlot" class="form-control" required>
+                                        <option value="" selected disabled></option>
+                                        <option value="morning">8.30 am : 10.30 am</option>
+                                        <option value="afternoon">10.30 am : 12.30 pm</option>
+                                        <option value="evening">12.30 pm : 2.30 pm</option>
+                                        <option value="evening">2.30 pm : 4.30 pm</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="vehicletype" class="form-label">Select vehicle type</label>
+                                    <select id="vehicletype" name="vehicletype" class="form-control" required>
+                                        <option value="" selected disabled></option>
+                                        <option value="morning">Bus</option>
+                                        <option value="afternoon">4 Wheelers</option>
+                                        <option value="evening">2 wheelers </option>
+                                    </select>
+                                </div>
+
+                                <div class="form-btn">
+                                    <button type="submit" class="submit-btn">Check Availability</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+    <!-- Bootstrap JS (must be included after jQuery) -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <!-- Bootstrap-datepicker JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <!-- Initialize Bootstrap-datepicker -->
+    <script>
+        $(document).ready(function(){
+            $('#dateInput').datepicker();
+        });
+
+
+        function redirectToPage() {
+        // Replace 'your_page_url' with the actual URL you want to redirect to
+        window.location.href = "view_availability";
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,262 @@
+{% include 'base.html' %}
+
+{% load static %}
+{% block title %}
+{% endblock %}
+{% block body %}
+
+<!-- Additional CSS Files -->
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'assets\css\alert.css' %}">
+
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/font-awesome.css' %}">
+
+<link rel="stylesheet" href="{% static 'assets/css/templatemo-breezed.css' %}">
+
+<link rel="stylesheet" href="{% static 'assets/css/owl-carousel.css' %}">
+
+<link rel="stylesheet" href="{% static 'assets/css/lightbox.css' %}">
+
+
+
+<div class="login-box">
+  <h2>Login</h2>
+  <form role="form"  action="{% url 'adminindex' %}"  method="post" name="form1">
+      {% csrf_token %}
+    <div class="user-box">
+      <input type="email" onblur="ValidateEmail(document.form1.uname)" id="uname" name="uname" >
+      <label>Username</label>
+    </div>
+    <div class="user-box">
+      <input type="password" id="passwd" name="passwd">
+      <label>Password</label>
+    </div>
+    <button type="submit" onclick="location.href='adminindex'" class="btn btn-light" id="bt" name="bt">LOGIN</button>
+
+            <br/>
+            <br>
+            
+  </form>
+    <h2> {{msg}}</h2>
+</div>
+<style>
+    html {
+  height: 100%;
+}
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5); /* Adjust the opacity value as needed */
+    z-index: -1;
+}
+
+body {
+    background-image: url("{% static 'assets\images\Athirappilly-Falls.webp' %}");
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+#bt {
+    background-color: #f8f9fa;
+    color: #343a40;
+    border: 1px solid #343a40;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 8px; /* Adjust the value to control the amount of rounding */
+    font-family: 'impact', sans-serif; /* Replace 'Your Chosen Font' with the actual font name */
+
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#bt:hover {
+    background-color: #343a40;
+    color: #f8f9fa;
+}
+
+
+
+.login-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: #5fb759;
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px #5fb759;
+  border-radius: 10px;
+}
+
+.login-box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+.login-box .user-box label {
+  position: absolute;
+  top:0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #ebf1eb;
+  font-size: 12px;
+}
+
+.login-box form a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #eef1ee;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 4px
+}
+
+.login-box a:hover {
+  background: #e2edc0;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #e2edc0,
+              0 0 25px #e2edc0,
+              0 0 50px #e2edc0,
+              0 0 100px #e2edc0;
+}
+.login-box button:hover {
+  background: #e2edc0;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #e2edc0,
+              0 0 25px #e2edc0,
+              0 0 50px #e2edc0,
+              0 0 100px #e2edc0;
+}
+.login-box a span {
+  position: absolute;
+  display: block;
+}
+
+.login-box a span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #e2edc0);
+  animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,100% {
+    left: 100%;
+  }
+}
+
+.login-box a span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #e2edc0);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: .25s
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%,100% {
+    top: 100%;
+  }
+}
+
+.login-box a span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #e2edc0);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: .5s
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%,100% {
+    right: 100%;
+  }
+}
+
+.login-box a span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #e2edc0);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: .75s
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,100% {
+    bottom: 100%;
+  }
+}
+
+</style>
+<script>
+    function ValidateEmail(mail)
+{
+    //  alert("You have entered an invalid email address!")
+ if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail.value))
+  {
+    return (true)
+  }
+    alert("You have entered an invalid email address!")
+    return (false)
+}
+</script>
+{% endblock %}

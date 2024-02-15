@@ -1,0 +1,142 @@
+
+{% include 'base.html' %}
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'assets/css/regstyle.css' %}">
+    <style>
+
+.container {
+    position: relative;
+    background-color: white;     opacity: 0.8; /* Adjust the opacity as needed */
+}
+.add-phone {
+            cursor: pointer;
+            color: #007bff;
+            text-decoration: underline;
+            margin-top: 10px;
+            display: block;
+        }
+
+        .additional-phone {
+            margin-top: 10px;
+        }
+
+        /* Optional: Style for the close (remove) icon */
+        .remove-phone {
+            cursor: pointer;
+            color: #dc3545;
+            font-weight: bold;
+            margin-left: 5px;
+            font-size: 16px;
+        }
+
+        body {
+            background: url('{% static "assets/images/athirappilly3.jpg" %}') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            opacity: 0.9;
+        }
+
+        .btn-custom {
+            background-color: #4CAF50; /* Green color for the button */
+            color: white;
+        }
+    </style>
+    <!-- Add any other meta tags or links you need -->
+    <title>Register</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-xl-9 mx-auto">
+                <div class="card card-signin flex-row my-5">
+                    <div class="card-img-left d-none d-md-flex">
+                        <!-- Background image for card set in CSS! -->
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Edit Profile</h5>
+                        <form class="form-signin">
+                            <div class="form-label-group">
+                                <input type="text" id="inputUserame" class="form-control" placeholder="Username" required
+                                    autofocus>
+                                <label for="inputUserame">Username</label>
+                            </div>
+
+                            <div class="form-label-group">
+                                <input type="email" id="inputEmail" class="form-control" placeholder="Email address"
+                                    required>
+                                <label for="inputEmail">Email address</label>
+                            </div>
+
+                            
+
+                            <div class="form-label-group">
+                                <input type="text" id="inputAadharid" class="form-control" placeholder="aadharid" required
+                                    autofocus>
+                                <label for="inputUserame">AadharId</label>
+                            </div>
+                            <div class="form-label-group">
+                                <input type="tel" id="inputPhone" class="form-control" placeholder="Primary Phonenumber"
+                                    required autofocus>
+                                <label for="inputPhone">Primary Phone</label>
+                            </div>
+
+                            <!-- Additional Phones -->
+                            <div id="additionalPhones"></div>
+                            <span class="add-phone" onclick="addPhoneField()">+ Add Another Phone</span>
+
+
+                            <!-- Your existing form fields -->
+
+                            <div class="form-label-group">
+                                <input type="password" id="inputPassword" class="form-control"
+                                    placeholder=" password" required>
+                                <label for="inputPassword">Password</label>
+                            </div>
+                            <button class="btn btn-lg btn-primary btn-block text-uppercase btn-custom" type="submit">Update</button>
+                            
+                            <hr class="my-4">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let phoneCount = 1;
+
+        function addPhoneField() {
+            const additionalPhonesDiv = document.getElementById('additionalPhones');
+
+            const newPhoneInput = document.createElement('div');
+            newPhoneInput.className = 'form-label-group additional-phone';
+            newPhoneInput.innerHTML = `
+                <input type="tel" id="inputPhone${phoneCount}" class="form-control" placeholder="Additional Phonenumber"
+                    autofocus>
+                <label for="inputPhone${phoneCount}">Additional Phone</label>
+                <span class="remove-phone" onclick="removePhoneField(this)">X</span>
+            `;
+
+            additionalPhonesDiv.appendChild(newPhoneInput);
+            phoneCount++;
+        }
+
+        function removePhoneField(element) {
+            const additionalPhonesDiv = document.getElementById('additionalPhones');
+            additionalPhonesDiv.removeChild(element.parentNode);
+        }
+    </script>
+</body>
+
+</html>
